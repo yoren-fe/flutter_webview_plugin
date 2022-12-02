@@ -16,7 +16,7 @@ gradle.buildFinished { buildResult ->
 buildscript {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
 
     dependencies {
@@ -26,7 +26,7 @@ buildscript {
 
 allprojects {
     repositories {
-        jcenter()
+        mavenCentral()
         google()
     }
 }
@@ -53,10 +53,10 @@ android {
     }
 }
 dependencies {
-    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.5.1'
 
-	testImplementation 'junit:junit:4.12'
-    testImplementation 'androidx.test:core:1.2.0'
+	testImplementation 'junit:junit:4.13.2'
+    testImplementation 'androidx.test:core:1.4.0'
 
 //    When running unit tests for project, gradle needs to have flutter.jar in path
 //    since there's no FLUTTER_HOME variable, we need to pass flutterPath from console with command:
@@ -67,5 +67,5 @@ dependencies {
         testImplementation files(System.getProperty('flutterPath') + '/bin/cache/artifacts/engine/android-x64/flutter.jar')
     }
 
-    testImplementation 'org.mockito:mockito-inline:2.28.2'
+    testImplementation 'org.mockito:mockito-inline:4.8.0'
 }
